@@ -59,7 +59,6 @@ let quizQuestions = [{
     optionC: "14",
     optionD: "32",
     correctAnswer: "a"},
-    
     ];
 
     let finalQuestionIndex = quizQuestions.length;
@@ -86,6 +85,7 @@ function generateQuestion(){
 
 //function to show only the quiz questions once start button is clicked
 function startQuiz(){
+
     gameOver.style.display = "none";
     startQuizEl.style.display = "none";
     
@@ -99,6 +99,7 @@ function startQuiz(){
           showScore();
         }
       }, 1000);
+
       generateQuestion();
     
       quizBody.style.display = "block";
@@ -106,6 +107,7 @@ function startQuiz(){
 
 //function that will display your score and ask for uer initials. 
 function showScore(){
+
     quizBody.style.display = "none"
     gameOver.style.display = "flex";
     clearInterval(timer);
@@ -136,9 +138,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
         savedHighscores.push(currentHighscore);
         localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
         generateHighscores();
-
-    }
-    
+    }  
 });
 
 //function that generates a new high score list from local storage
@@ -178,11 +178,11 @@ function clearScore(){
     window.localStorage.clear();
     highscoreName.textContent = "";
     highscoreDisplayScore.textContent = "";
-    
 }
 
 //function to reset everything to take quiz again
 function replayQuiz(){
+
     startQuizEl.style.display = "flex";
     highscoreContainer.style.display = "none";
     gameOver.style.display = "none";
@@ -190,8 +190,6 @@ function replayQuiz(){
     timeLeft = 100;
     score = 0;
     currentQuestionIndex = 0;
-    
-    
 }
 
 // Funcion to check if the user answer is true or false
