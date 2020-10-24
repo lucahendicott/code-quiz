@@ -53,7 +53,9 @@ button {
 
 .btn:hover{
       background-color: #f9ca24;
-      transform: translate(-3px, 1px);
+      transform: translate(-2px, 1px);
+      /* color: rgb(105, 102, 102); */
+     
   }
 
 #openingPage{

@@ -24,14 +24,14 @@ let textPlace = document.querySelector("#answerText")
 let highScoreButton = document.querySelector("#highScoreButton")
 
 
-//was trying to remove the "on click function from html by adding event listener in for loop here. "
-// let buttons = document.querySelectorAll(".btn").length;
-// //for loop adding a click event to the answer buttons, then runs checkAnswer function
-// for (let i = 0; i < buttons ; i++) {
-//     document.querySelectorAll(".btn")[i].addEventListener("click", function() {
-//         checkAnswer()
-//     });
-// }
+// was trying to remove the "on click function from html by adding event listener in for loop here. "
+let buttons = document.querySelectorAll(".btn").length;
+//for loop adding a click event to the answer buttons, then runs checkAnswer function
+for (let i = 0; i < buttons ; i++) {
+    document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+        checkAnswer()
+    });
+}
 
 
 highScoreButton.addEventListener("click",showHighscore)
@@ -121,7 +121,7 @@ function showScore(){
 
 submitScoreBtn.addEventListener("click", function highscore(){
     
-    //conditional stating the user must enter initials to proceed, once they do, we can get the initials and score from local storage
+    //conditional stating the user must enter initials to proceed, once they do, we can get their initials and score from local storage
     if(highscoreInputName.value === "") {
         alert("We need your initials!");
         return false;
@@ -200,25 +200,70 @@ function replayQuiz(){
 }
 
 // Funcion to check if the user answer is true or false
-function checkAnswer(answer){
-    correct = quizQuestions[currentQuestionIndex].correctAnswer
+function checkAnswer(){
+    // correct = quizQuestions[currentQuestionIndex].correctAnswer
 
-    if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
-        score++;
+    // if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
+    //     score++;
+    //     textPlace.innerText = "Let's go girls!"
+    //     currentQuestionIndex++;
+    //     generateQuestion()
+       
+       
+    // }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
+    //     currentQuestionIndex++;
+    //     textPlace.innerText = "That don't impress me much."
+    //     // if user answer is wrong, 10 seconds falls off the clock
+    //     timeLeft -= 10
+    //     generateQuestion();
+    // }else{
+    //     showScore();
+    // }
+    if (optionA.getAttribute("data-answer") === currentQuestion.correctAnswer) {
         textPlace.innerText = "Let's go girls!"
+        score++
         currentQuestionIndex++;
         generateQuestion()
-       
-       
-    }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
-        currentQuestionIndex++;
+      } else {
         textPlace.innerText = "That don't impress me much."
-        // if user answer is wrong, 10 seconds falls off the clock
-        timeLeft -= 10
-        generateQuestion();
-    }else{
-        showScore();
+        timerCount -= 10
+      }
+
+      if (optionB.getAttribute("data-answer") === currentQuestion.correctAnswer) {
+        textPlace.innerText = "Let's go girls!"
+        score++
+        currentQuestionIndex++;
+        generateQuestion()
+      } else {
+        textPlace.innerText = "That don't impress me much."
+        timerCount -= 10
+      }
+
+      if (optionC.getAttribute("data-answer") === currentQuestion.correctAnswer) {
+        textPlace.innerText = "Let's go girls!"
+        score++
+        currentQuestionIndex++;
+        generateQuestion()
+      } else {
+        textPlace.innerText = "That don't impress me much."
+        timerCount -= 10
+      }
+
+      if (optionD.getAttribute("data-answer") === currentQuestion.correctAnswer) {
+        textPlace.innerText = "Let's go girls!"
+        score++
+        currentQuestionIndex++;
+        generateQuestion()
+      } else {
+        textPlace.innerText = "That don't impress me much."
+        timerCount -= 10
+      }
     }
-}
+
+
+
+
+
+
 // let data = getAttribute("data-answer ")
 // let answerValue = 
