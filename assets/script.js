@@ -21,22 +21,35 @@ let buttonC = document.querySelector("#c");
 let buttonD = document.querySelector("#d");
 let textPlace = document.querySelector("#answerText")
 
+let highScoreButton = document.querySelector("#highScoreButton")
 
+
+//was trying to remove the "on click function from html by adding event listener in for loop here. "
+// let buttons = document.querySelectorAll(".btn").length;
+// //for loop adding a click event to the answer buttons, then runs checkAnswer function
+// for (let i = 0; i < buttons ; i++) {
+//     document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+//         checkAnswer()
+//     });
+// }
+
+
+highScoreButton.addEventListener("click",showHighscore)
 startQuizButton.addEventListener("click",startQuiz);
 
-// variable declaring the questions array
+// variable declaring the questions objects array
 let quizQuestions = [{
     question: "What does API stand for?",
-    optionA: "application programming iterator",
-    optionB: "anonymous programming integer",
-    optionC: " application programming integer",
-    optionD: "application programming interface",
+    optionA: "Application Programming Iterator",
+    optionB: "Anonymous Programming Integer",
+    optionC: "Application Programming Integer",
+    optionD: "Application Programming Interface",
     correctAnswer: "d"},
   {
     question: "Which of the following is a string?",
     optionA: "25",
     optionB: "[How are you?]",
-    optionC: "“130”",
+    optionC: '"130"',
     optionD: "{My name is Lucah} ",
     correctAnswer: "c"},
    {
@@ -63,7 +76,7 @@ let quizQuestions = [{
     let score = 0;
     let correct;
 
-    //Function that generates the questions and pushes the text content 
+    //Function that generates the questions and pushes the text content while making sure the game over page is not displayed
 function generateQuestion(){
     gameoverDiv.style.display = "none";
     if (currentQuestionIndex === finalQuestionIndex){
@@ -164,7 +177,15 @@ function clearScore(){
     window.localStorage.clear();
     highscoreDisplayName.textContent = "";
     highscoreDisplayScore.textContent = "";
+    
 }
+
+//Add event listener to the "Try Again!" button that replays the quiz when clicked
+let replay = document.querySelector("#tryAgain")
+replay.addEventListener("click",replayQuiz)
+
+let clear = document.querySelector("#clearHighscore")
+clear.addEventListener("click",clearScore)
 
 //function to reset everything to take quiz again
 function replayQuiz(){
@@ -180,26 +201,24 @@ function replayQuiz(){
 
 // Funcion to check if the user answer is true or false
 function checkAnswer(answer){
-    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+    correct = quizQuestions[currentQuestionIndex].correctAnswer
 
     if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
         score++;
-        // alert("Let's go girls!");
         textPlace.innerText = "Let's go girls!"
         currentQuestionIndex++;
-        generateQuestion();
+        generateQuestion()
+       
        
     }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
-        // alert("That don't impress me much.")
-        textPlace.innerText = "That don't impress me much."
         currentQuestionIndex++;
-        // if answer is wrong, 10 seconds fall off the clock
+        textPlace.innerText = "That don't impress me much."
+        // if user answer is wrong, 10 seconds falls off the clock
         timeLeft -= 10
         generateQuestion();
-      
     }else{
         showScore();
     }
 }
-
-
+// let data = getAttribute("data-answer ")
+// let answerValue = 

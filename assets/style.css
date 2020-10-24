@@ -1,5 +1,6 @@
 body{
-    background-color: lavenderblush;
+    background-color: #f1e5f562
+    ;
 }
 .container {
     width: 600px;
@@ -31,26 +32,28 @@ input{
     text-align: center;
 }
 
-  button {
-    display: inline-block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: purple;
+
+button {
     border-radius: 10px;
-    border: none;
-    color: lavenderblush;
-    text-align: center;
-    font-size: 15px;
-    padding: 20px;
-    width: 300px;
     margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #a55eea;
+    font-size: 15px;
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: lavenderblush;
+    text-align: center; 
   }
 
-  #tryAgain{
-      float: left;
-  }
+.startEndBtn:hover{
+    background-color: yellowgreen;
 
-  button:hover{
-      background-color: #9c88ff;
+}
+
+.btn:hover{
+      background-color: #f9ca24;
+      transform: translate(-3px, 1px);
   }
 
 #openingPage{
@@ -62,7 +65,7 @@ input{
 #timer{
     float: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: purple;
+    color: #82589F;
     font-size: 25px;
     margin-right: 20px;
     font-weight: bold;
@@ -123,6 +126,12 @@ input{
     height: 20px;
 }
 
+li{
+    
+    text-align: auto;
+    list-style-type: none;
+}
+
 #highscore-score{
     float: right;
     padding-right: 15px;
@@ -131,7 +140,7 @@ input{
 }
 #finalScore{
     padding-bottom: 10px;
-    font-size: x-large;
+    font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 } 
