@@ -11,15 +11,15 @@ This application runs as is in the browser. No downloads or installs needed.
 I found a lot of useful code to help me along the way!
 
 Styling help:
-[w3schools Display Properties](https://www.w3schools.com/cssref/pr_class_display.asp)
-[w3schools Button Fun](https://www.w3schools.com/css/css3_buttons.asp)
-[Awesome Color Palettes](https://flatuicolors.com/)
+[w3schools Display Properties](https://www.w3schools.com/cssref/pr_class_display.asp) <br>
+[w3schools Button Fun](https://www.w3schools.com/css/css3_buttons.asp) <br>
+[Awesome Color Palettes](https://flatuicolors.com/) <br>
 
 Functionality help:
-[HTML "onclick" events](https://www.w3schools.com/jsref/event_onclick.asp)
-[JS Quiz Builder](https://www.sitepoint.com/simple-javascript-quiz/)
-[JS Quiz Builder](https://codepen.io/boopalan002/pen/yKZVGa)
-[JS Quiz Builder](https://simplestepscode.com/javascript-quiz-tutorial/)
+[HTML "onclick" events](https://www.w3schools.com/jsref/event_onclick.asp) <br>
+[JS Quiz Builder](https://www.sitepoint.com/simple-javascript-quiz/) <br>
+[JS Quiz Builder](https://codepen.io/boopalan002/pen/yKZVGa) <br>
+[JS Quiz Builder](https://simplestepscode.com/javascript-quiz-tutorial/) <br>
 
 
 ## Deploy Application
