@@ -1,24 +1,27 @@
 body{
-    background-color: lavender;
+    background-color: lavenderblush;
 }
 .container {
     width: 600px;
     height: 600px;
     display: flex;
-    margin: auto;
+    margin: 0 auto;
+    margin-right: 350px;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
   }
-  
+
   h2{
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: -5px;
+    text-align: center;
 }
 
 #questions{
     color: black;
-    margin-bottom: 25px;
+    margin-top: 80px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 25px;
     font-family: sans-serif;
@@ -30,16 +33,20 @@ input{
 
   button {
     display: inline-block;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: purple;
     border-radius: 10px;
     border: none;
-    color: #eeeeee;
+    color: lavenderblush;
     text-align: center;
     font-size: 15px;
     padding: 20px;
     width: 300px;
     margin-top: 10px;
+  }
+
+  #tryAgain{
+      float: left;
   }
 
   button:hover{
@@ -54,14 +61,15 @@ input{
 
 #timer{
     float: right;
-    font-family: sans-serif;
-    color: rgb(90, 53, 90);
-    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: purple;
+    font-size: 25px;
     margin-right: 20px;
+    font-weight: bold;
 }
 
 #answerText{
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
 }
 
@@ -84,13 +92,13 @@ input{
     border: none;
     border-color: rgb(161, 58, 161);
     padding-bottom: 20px;
-    background: rgb(231, 155, 231);
+    /* background: rgb(231, 155, 231); */
 }
 
 #highscore-initials{
     display: inline-block;
     padding-left: 15px;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 
@@ -100,7 +108,7 @@ input{
     margin-bottom: 20px;
     margin-top: 20px;
     color: purple;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #highscoreContainer{
     height: 100%;
@@ -118,13 +126,13 @@ input{
 #highscore-score{
     float: right;
     padding-right: 15px;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold; 
 }
 #finalScore{
     padding-bottom: 10px;
     font-size: x-large;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 } 
 #quiz,

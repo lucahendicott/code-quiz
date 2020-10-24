@@ -26,25 +26,32 @@ startQuizButton.addEventListener("click",startQuiz);
 
 // variable declaring the questions array
 let quizQuestions = [{
-    question: "dbhwqjvbeqwbqwqwbkf hjqbvqjbqq?",
-    optionA: "vdwhjvbhvbw",
-    optionB: "vdwhvb",
-    optionC: "dwvbwhkvbkvej",
-    optionD: "55",
-    correctAnswer: "b"},
-  {
-    question: "fehqwjkvqvjhqhjqkejvqkjeqj?",
-    optionA: "vfefe",
-    optionB: "bfbfq",
-    optionC: "bgf",
-    optionD: "ngtrwwnr",
+    question: "What does API stand for?",
+    optionA: "application programming iterator",
+    optionB: "anonymous programming integer",
+    optionC: " application programming integer",
+    optionD: "application programming interface",
     correctAnswer: "d"},
+  {
+    question: "Which of the following is a string?",
+    optionA: "25",
+    optionB: "[How are you?]",
+    optionC: "“130”",
+    optionD: "{My name is Lucah} ",
+    correctAnswer: "c"},
    {
-    question: "dw hqjvbqhjekvbvbeqvbfqhvqvbeoqvvorvqrlqbhvjdqh wiew?",
-    optionA: "6",
-    optionB: "22",
-    optionC: "8",
-    optionD: "2",
+    question: "Which of the following commands puts an item at the end of an array?",
+    optionA: "unshift",
+    optionB: "push",
+    optionC: "shift",
+    optionD: "last",
+    correctAnswer: "b"},
+    {
+    question: "What would the output be of 2 + 4 + “8” ?",
+    optionA: "68",
+    optionB: "248",
+    optionC: "14",
+    optionD: "32",
     correctAnswer: "a"},
     
     ];
@@ -96,7 +103,7 @@ function showScore(){
     gameoverDiv.style.display = "flex";
     clearInterval(timer);
     highscoreInputName.value = "";
-    finalScoreEl.textContent = "You got " + score + " out of " + quizQuestions.length + " correct!";
+    finalScoreEl.textContent = "Woo! You got " + score + " out of " + quizQuestions.length + " correct!";
 }
 
 submitScoreBtn.addEventListener("click", function highscore(){
@@ -167,6 +174,8 @@ function replayQuiz(){
     timeLeft = 100;
     score = 0;
     currentQuestionIndex = 0;
+    textPlace.innerText = "";
+    
 }
 
 // Funcion to check if the user answer is true or false
