@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+
     <title>Javascript Quiz</title>
+
 </head>
 <body>
     <h3 id="timer"></h3>
@@ -12,8 +14,10 @@
     <div class="container">
        
         <div id="openingPage">
+
             <h2>It seems you have stumbled upon a Javascript quiz!</h2>
             <h2>Enter if you dare 😈...</h2>
+
         <button class ="startEndBtn" id="startbtn">Let's Go!</button>
         <button class ="startEndBtn" id="highScoreButton" >High Scores</button>
         </div>
@@ -22,15 +26,10 @@
 
                 <div id="questions"></div>
 
-                    <button class="btn" id="a" data-answer="a">A</button>
-                    <button class="btn" id="b" data-answer="b">B</button>
-                    <button class="btn" id="c" data-answer="c">C</button>
-                    <button class="btn" id="d" data-answer="d">D</button>
-               
-                    <!-- <button class="btn" id="a" onclick="checkAnswer('a')">A</button>
+                    <button class="btn" id="a" onclick="checkAnswer('a')">A</button>
                     <button class="btn" id="b" onclick="checkAnswer('b')">B</button>
                     <button class="btn" id="c" onclick="checkAnswer('c')">C</button>
-                    <button class="btn" id="d" onclick="checkAnswer('d')">D</button> -->
+                    <button class="btn" id="d" onclick="checkAnswer('d')">D</button>
                     
                 <div id="result"></div>
 
@@ -52,17 +51,17 @@
 
         <div id=highscoreContainer>
         <div id="highscorePage">
-            <div id="highscore-header">
+            <div id="highscoreHeader">
 
                 <h2 id="user">User</h2>
                 <h2 id="score">Score</h2>
 
             </div>
-            <div id = "highscore-initials"></div>
-            <div id = "highscore-score"></div>
+            <div id ="scoreInitials"></div>
+            <div id ="highScore"></div>
         </div>
 
-        <div id="endQuizBtns">
+        <div id="endBtn">
             <button class ="startEndBtn" id="tryAgain">Try Again!</button>
             <button class ="startEndBtn" id="clearHighscore">Clear Scores</button>
         </div>

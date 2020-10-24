@@ -32,7 +32,6 @@ input{
     text-align: center;
 }
 
-
 button {
     border-radius: 10px;
     margin-top: 10px;
@@ -44,6 +43,7 @@ button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: lavenderblush;
     text-align: center; 
+    outline:none;
   }
 
 .startEndBtn:hover{
@@ -54,7 +54,6 @@ button {
 .btn:hover{
       background-color: #f9ca24;
       transform: translate(-2px, 1px);
-      /* color: rgb(105, 102, 102); */
      
   }
 
@@ -86,28 +85,22 @@ button {
     align-items: center;
 } 
 
-#highScore{
-    height: 1.5rem;
-    border: groove 2px;
-}
-
 #highscorePage{
     display: none;
     width: 100%;
     border: none;
     border-color: rgb(161, 58, 161);
     padding-bottom: 20px;
-    /* background: rgb(231, 155, 231); */
 }
 
-#highscore-initials{
+#scoreInitials{
     display: inline-block;
     padding-left: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 
-#highscore-header{
+#highscoreHeader{
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
@@ -115,6 +108,7 @@ button {
     color: purple;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #highscoreContainer{
     height: 100%;
     width: 100%;
@@ -123,6 +117,7 @@ button {
     align-items: center;
     justify-content: center;
 }
+
 #initials{
     margin: 20px;
     height: 20px;
@@ -134,18 +129,20 @@ li{
     list-style-type: none;
 }
 
-#highscore-score{
+#highScore{
     float: right;
     padding-right: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold; 
 }
+
 #finalScore{
     padding-bottom: 10px;
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 } 
+
 #quiz,
 #result{ 
     display: none;

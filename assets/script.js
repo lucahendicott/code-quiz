@@ -1,41 +1,34 @@
 // Variables to select HTML elements
 let resultsEl = document.querySelector("#result");
-let endQuizBtns = document.querySelector("#endQuizBtns");
+let endBtn = document.querySelector("#endBtn");
 let finalScoreEl = document.querySelector("#finalScore");
-let gameoverDiv = document.querySelector("#gameover");
+let gameOver = document.querySelector("#gameover");
 let questionsEl = document.querySelector("#questions");
 let quizTimer = document.querySelector("#timer");
 let highscoreContainer = document.querySelector("#highscoreContainer");
 let startQuizButton = document.querySelector("#startbtn");
 let startQuizEl = document.querySelector("#openingPage");
 let quizBody = document.querySelector("#quiz");
+let replay = document.querySelector("#tryAgain")
+let clear = document.querySelector("#clearHighscore")
 let highscoreEl = document.querySelector("#highscorePage");
-let highscoreDisplayScore = document.querySelector("#highscore-score");
-let highscoreDisplayName = document.querySelector("#highscore-initials");
+let highscoreDisplayScore = document.querySelector("#highScore");
+let highscoreName = document.querySelector("#scoreInitials");
 let submitScoreBtn = document.querySelector("#submitScore");
 let highscoreInputName = document.querySelector("#initials");
-
 let buttonA = document.querySelector("#a");
 let buttonB = document.querySelector("#b");
 let buttonC = document.querySelector("#c");
 let buttonD = document.querySelector("#d");
-let textPlace = document.querySelector("#answerText")
+let textPlace = document.querySelector("#answerText");
+let highScoreButton = document.querySelector("#highScoreButton");
 
-let highScoreButton = document.querySelector("#highScoreButton")
-
-
-// was trying to remove the "on click function from html by adding event listener in for loop here. "
-let buttons = document.querySelectorAll(".btn").length;
-//for loop adding a click event to the answer buttons, then runs checkAnswer function
-for (let i = 0; i < buttons ; i++) {
-    document.querySelectorAll(".btn")[i].addEventListener("click", function() {
-        checkAnswer()
-    });
-}
-
-
-highScoreButton.addEventListener("click",showHighscore)
+highScoreButton.addEventListener("click",showHighscore);
 startQuizButton.addEventListener("click",startQuiz);
+
+//Add event listener to the "Try Again!" button so that replays the quiz when clicked
+replay.addEventListener("click",replayQuiz)
+clear.addEventListener("click",clearScore)
 
 // variable declaring the questions objects array
 let quizQuestions = [{
@@ -78,7 +71,8 @@ let quizQuestions = [{
 
     //Function that generates the questions and pushes the text content while making sure the game over page is not displayed
 function generateQuestion(){
-    gameoverDiv.style.display = "none";
+
+    gameOver.style.display = "none";
     if (currentQuestionIndex === finalQuestionIndex){
         return showScore();
     } 
@@ -92,7 +86,7 @@ function generateQuestion(){
 
 //function to show only the quiz questions once start button is clicked
 function startQuiz(){
-    gameoverDiv.style.display = "none";
+    gameOver.style.display = "none";
     startQuizEl.style.display = "none";
     
  //timer to countdown when first questions starts
@@ -113,7 +107,7 @@ function startQuiz(){
 //function that will display your score and ask for uer initials. 
 function showScore(){
     quizBody.style.display = "none"
-    gameoverDiv.style.display = "flex";
+    gameOver.style.display = "flex";
     clearInterval(timer);
     highscoreInputName.value = "";
     finalScoreEl.textContent = "Woo! You got " + score + " out of " + quizQuestions.length + " correct!";
@@ -125,7 +119,8 @@ submitScoreBtn.addEventListener("click", function highscore(){
     if(highscoreInputName.value === "") {
         alert("We need your initials!");
         return false;
-    }else{
+    }
+    else{
         let savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
         let currentUser = highscoreInputName.value.trim();
         let currentHighscore = {
@@ -133,10 +128,10 @@ submitScoreBtn.addEventListener("click", function highscore(){
             score : score
         };
     
-        gameoverDiv.style.display = "none";
+        gameOver.style.display = "none";
         highscoreContainer.style.display = "flex";
         highscoreEl.style.display = "block";
-        endQuizBtns.style.display = "flex";
+        endBtn.style.display = "flex";
         
         savedHighscores.push(currentHighscore);
         localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
@@ -148,122 +143,77 @@ submitScoreBtn.addEventListener("click", function highscore(){
 
 //function that generates a new high score list from local storage
 function generateHighscores(){
-    highscoreDisplayName.textContent = "";
+
+    highscoreName.textContent = "";
     highscoreDisplayScore.textContent = "";
+
     let highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+
     for (i=0; i<highscores.length; i++){
+        
         let newNameSpan = document.createElement("li");
         let newScoreSpan = document.createElement("li");
         newNameSpan.textContent = highscores[i].name;
         newScoreSpan.textContent = highscores[i].score;
-        highscoreDisplayName.appendChild(newNameSpan);
+        highscoreName.appendChild(newNameSpan);
         highscoreDisplayScore.appendChild(newScoreSpan);
     }
 }
 
 // Function that only displays the high score box and the buttons to retake the quiz/ clear scores
 function showHighscore(){
-    startQuizEl.style.display = "none"
-    gameoverDiv.style.display = "none";
+
     highscoreEl.style.display = "block";
+    startQuizEl.style.display = "none"
+    gameOver.style.display = "none";
+    endBtn.style.display = "flex";
     highscoreContainer.style.display = "flex";
-    endQuizBtns.style.display = "flex";
 
     generateHighscores();
 }
 
 //function to clear the high scores from local sotrage
 function clearScore(){
+
     window.localStorage.clear();
-    highscoreDisplayName.textContent = "";
+    highscoreName.textContent = "";
     highscoreDisplayScore.textContent = "";
     
 }
 
-//Add event listener to the "Try Again!" button that replays the quiz when clicked
-let replay = document.querySelector("#tryAgain")
-replay.addEventListener("click",replayQuiz)
-
-let clear = document.querySelector("#clearHighscore")
-clear.addEventListener("click",clearScore)
-
 //function to reset everything to take quiz again
 function replayQuiz(){
-    highscoreContainer.style.display = "none";
-    gameoverDiv.style.display = "none";
     startQuizEl.style.display = "flex";
+    highscoreContainer.style.display = "none";
+    gameOver.style.display = "none";
+    textPlace.innerText = "";
     timeLeft = 100;
     score = 0;
     currentQuestionIndex = 0;
-    textPlace.innerText = "";
+    
     
 }
 
 // Funcion to check if the user answer is true or false
-function checkAnswer(){
-    // correct = quizQuestions[currentQuestionIndex].correctAnswer
+function checkAnswer(answer){
 
-    // if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
-    //     score++;
-    //     textPlace.innerText = "Let's go girls!"
-    //     currentQuestionIndex++;
-    //     generateQuestion()
-       
-       
-    // }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
-    //     currentQuestionIndex++;
-    //     textPlace.innerText = "That don't impress me much."
-    //     // if user answer is wrong, 10 seconds falls off the clock
-    //     timeLeft -= 10
-    //     generateQuestion();
-    // }else{
-    //     showScore();
-    // }
-    if (optionA.getAttribute("data-answer") === currentQuestion.correctAnswer) {
+    correct = quizQuestions[currentQuestionIndex].correctAnswer
+
+    if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
+        score++;
         textPlace.innerText = "Let's go girls!"
-        score++
         currentQuestionIndex++;
         generateQuestion()
-      } else {
-        textPlace.innerText = "That don't impress me much."
-        timerCount -= 10
-      }
-
-      if (optionB.getAttribute("data-answer") === currentQuestion.correctAnswer) {
-        textPlace.innerText = "Let's go girls!"
-        score++
-        currentQuestionIndex++;
-        generateQuestion()
-      } else {
-        textPlace.innerText = "That don't impress me much."
-        timerCount -= 10
-      }
-
-      if (optionC.getAttribute("data-answer") === currentQuestion.correctAnswer) {
-        textPlace.innerText = "Let's go girls!"
-        score++
-        currentQuestionIndex++;
-        generateQuestion()
-      } else {
-        textPlace.innerText = "That don't impress me much."
-        timerCount -= 10
-      }
-
-      if (optionD.getAttribute("data-answer") === currentQuestion.correctAnswer) {
-        textPlace.innerText = "Let's go girls!"
-        score++
-        currentQuestionIndex++;
-        generateQuestion()
-      } else {
-        textPlace.innerText = "That don't impress me much."
-        timerCount -= 10
-      }
     }
-
-
-
-
-
-
-// let data = getAttribute("data-answer ")
-// let answerValue = 
+    else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
+        currentQuestionIndex++;
+        textPlace.innerText = "That don't impress me much."
+       
+        // if user answer is wrong, 10 seconds falls off the clock
+        timeLeft -= 10
+        generateQuestion();
+    }
+    else{
+        showScore();
+    }
+}
