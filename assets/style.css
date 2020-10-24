@@ -1,0 +1,133 @@
+body{
+    background-color: lavender;
+}
+.container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+  }
+  
+  h2{
+    font-family: sans-serif;
+    margin-top: -5px;
+}
+
+#questions{
+    color: black;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+input{
+    text-align: center;
+}
+
+  button {
+    display: inline-block;
+    font-family: sans-serif;
+    background-color: purple;
+    border-radius: 10px;
+    border: none;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 300px;
+    margin-top: 10px;
+  }
+
+  button:hover{
+      background-color: #9c88ff;
+  }
+
+#openingPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer{
+    float: right;
+    font-family: sans-serif;
+    color: rgb(90, 53, 90);
+    font-size: x-large;
+    margin-right: 20px;
+}
+
+#answerText{
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+#gameover {
+    text-align: center;
+    align-content: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#highScore{
+    height: 1.5rem;
+    border: groove 2px;
+}
+
+#highscorePage{
+    display: none;
+    width: 100%;
+    border: none;
+    border-color: rgb(161, 58, 161);
+    padding-bottom: 20px;
+    background: rgb(231, 155, 231);
+}
+
+#highscore-initials{
+    display: inline-block;
+    padding-left: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#highscore-header{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: purple;
+    font-family: sans-serif;
+}
+#highscoreContainer{
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#initials{
+    margin: 20px;
+    height: 20px;
+}
+
+#highscore-score{
+    float: right;
+    padding-right: 15px;
+    font-family: sans-serif;
+    font-weight: bold; 
+}
+#finalScore{
+    padding-bottom: 10px;
+    font-size: x-large;
+    font-family: sans-serif;
+    font-weight: bold;
+} 
+#quiz,
+#result{ 
+    display: none;
+}
