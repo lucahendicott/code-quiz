@@ -141,6 +141,7 @@ function startQuiz(){
         quizTimer.textContent = "Time left: " + timeLeft + "s"
     
         if(timeLeft <= 0) {
+          clearInterval(timer)
           showScore();
           
         }
