@@ -16,7 +16,7 @@ I used only CSS to style the app. Mostly targeting elements by id. I played arou
 
 The JS file is loaded up with multiple variables assigned to query selectors and some other global variables as well. There are functions for pretty much everything the application is doing. Starting the quiz, staring the timer, generating the questions, checking the answer input and responding right or wrong, sending and recieving initials and high score from local storage, etc.. Though, I added the onCLick function in my HTML for the answer option buttons, I added click event listeners with the proper functions to all the rest of my buttons in the JS file. There was really no rhyme or reason for that, other than trying out new things. 
 
-![JavaScript Quiz (1)](https://user-images.githubusercontent.com/70814349/97096671-5542b180-1624-11eb-9727-88807282eed7.gif)
+![JavaScript Quiz](https://user-images.githubusercontent.com/70814349/97099774-fc860f80-1649-11eb-9a0b-b64c31ca1552.gif)
  
 ## Getting Started
 
