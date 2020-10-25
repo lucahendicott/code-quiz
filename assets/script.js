@@ -142,8 +142,7 @@ function startQuiz(){
     
         if(timeLeft <= 0) {
           clearInterval(timer)
-          showScore();
-          
+          showScore(); 
         }
       }, 1000);
 
