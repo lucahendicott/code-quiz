@@ -32,20 +32,20 @@ clear.addEventListener("click",clearScore)
 
 // variable declaring the questions objects array
 let quizQuestions = [{
+    question: 'How would you write "Shania Twain!" in an alert box?',
+    optionA: 'alertBox("Shania Twain!")',
+    optionB: 'alert("Shania Twain!")',
+    optionC: 'prompt("Shania Twain!")',
+    optionD: 'alert(Shania Twain!)',
+    correctAnswer: "b"},
+    {
     question: "What does API stand for?",
     optionA: "Application Programming Iterator",
     optionB: "Anonymous Programming Integer",
     optionC: "Application Programming Integer",
     optionD: "Application Programming Interface",
     correctAnswer: "d"},
-  {
-    question: "Which of the following is a string?",
-    optionA: "25",
-    optionB: "[How are you?]",
-    optionC: '"130"',
-    optionD: "{My name is Lucah} ",
-    correctAnswer: "c"},
-   {
+    {
     question: "Which of the following commands puts an item at the end of an array?",
     optionA: "unshift",
     optionB: "push",
@@ -53,12 +53,54 @@ let quizQuestions = [{
     optionD: "last",
     correctAnswer: "b"},
     {
-    question: "What would the output be of 2 + 4 + “8” ?",
+    question: "What would the expected output be of (2 + 4 + “8”) ?",
     optionA: "68",
     optionB: "248",
     optionC: "14",
     optionD: "32",
     correctAnswer: "a"},
+    {
+    question: "Where in your HTML do you link your JavaScript file?",
+    optionA: "Inside the <head>",
+    optionB: "Inside the <title>",
+    optionC: "Inside the <body>",
+    optionD: "You don't link it in your HTML",
+    correctAnswer: "c"},
+    {
+    question: "Which characters go immediately after a function?",
+    optionA: "()",
+    optionB: "[]",
+    optionC: "{}",
+    optionD: "||",
+    correctAnswer: "a"},
+    {
+    question: "What is the syntax for something is 'not equal to'?",
+    optionA: "===",
+    optionB: "+=",
+    optionC: "==",
+    optionD: "!==",
+    correctAnswer: "d"},
+    {
+    question: "What are if, else if and else statements called?",
+    optionA: "Functions",
+    optionB: "Conditionals",
+    optionC: "Loops",
+    optionD: "Event Listeners",
+    correctAnswer: "b"},
+    {
+    question: "What function can turn a string into a number?",
+    optionA: "typeOf.number()",
+    optionB: "typeOf(number)",
+    optionC: "parseInt()",
+    optionD: "generateNumber()",
+    correctAnswer: "c"},
+    {
+    question: "Which of the following is a string?",
+    optionA: "25",
+    optionB: "[How are you?]",
+    optionC: '"Shania Twain"',
+    optionD: "{My name is Lucah} ",
+    correctAnswer: "c"},
     ];
 
     let finalQuestionIndex = quizQuestions.length;
@@ -102,7 +144,7 @@ function startQuiz(){
 
       generateQuestion();
     
-      quizBody.style.display = "block";
+      quizBody.style.display = "inline-block";
 }
 
 //function that will display your score and ask for uer initials. 

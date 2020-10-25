@@ -15,6 +15,8 @@ I found out how you can add onClick functions to elements in your HTML and run i
 I used only CSS to style the app. Mostly targeting elements by id. I played around a lot to get a nice clean looking app. I provided some links below in my "credits" section of some cool stuff I learned with styling. 
 
 The JS file is loaded up with multiple variables assigned to query selectors and some other global variables as well. There are functions for pretty much everything the application is doing. Starting the quiz, staring the timer, generating the questions, checking the answer input and responding right or wrong, sending and recieving initials and high score from local storage, etc.. Though, I added the onCLick function in my HTML for the answer option buttons, I added click event listeners with the proper functions to all the rest of my buttons in the JS file. There was really no rhyme or reason for that, other than trying out new things. 
+
+<iframe src="https://drive.google.com/file/d/1-n2Y1dFzQFBNZayrGxA7EzdHUqqkJT42/preview" width="640" height="480"></iframe>
  
 ## Getting Started
 
