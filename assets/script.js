@@ -26,8 +26,12 @@ let highScoreButton = document.querySelector("#highScoreButton");
 highScoreButton.addEventListener("click",showHighscore);
 startQuizButton.addEventListener("click",startQuiz);
 
-//Add event listener to the "Try Again!" button so that replays the quiz when clicked
-replay.addEventListener("click",replayQuiz)
+//Add event listener to the "Try Again!" button so that it replays the quiz when clicked and clears the timer text
+replay.addEventListener("click",function(){
+    replayQuiz()
+    quizTimer.innerText = ""
+})
+
 clear.addEventListener("click",clearScore)
 
 // variable declaring the questions objects array
@@ -134,11 +138,11 @@ function startQuiz(){
  //timer to countdown when first questions starts
     timer = setInterval(function() {
         timeLeft--;
-        quizTimer.textContent = "Time left: " + timeLeft;
+        quizTimer.textContent = "Time left: " + timeLeft + "s"
     
-        if(timeLeft === 0) {
-          clearInterval(timer);
+        if(timeLeft <= 0) {
           showScore();
+          
         }
       }, 1000);
 
@@ -234,7 +238,7 @@ function replayQuiz(){
     currentQuestionIndex = 0;
 }
 
-// Funcion to check if the user answer is true or false
+// Funcion to check if the user answer is true or false and generate next questions from index unless it's the end of the quiz.
 function checkAnswer(answer){
 
     correct = quizQuestions[currentQuestionIndex].correctAnswer
@@ -248,7 +252,6 @@ function checkAnswer(answer){
     else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
         currentQuestionIndex++;
         textPlace.innerText = "That don't impress me much."
-       
         // if user answer is wrong, 10 seconds falls off the clock
         timeLeft -= 10
         generateQuestion();
