@@ -46,8 +46,11 @@ button {
   }
 
 .startEndBtn:hover{
-    background-color: rgb(156, 156, 248);
+    background-color: yellowgreen;
+
 }
+
+.startEndBtn:hover,
 .btn:hover{
       background-color: #f9ca24;
       transform: translate(-2px, 1px);
